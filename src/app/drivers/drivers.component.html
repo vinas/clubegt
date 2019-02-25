@@ -1,0 +1,10 @@
+<h2>Drivers</h2>
+<ul class="drivers">
+  <li *ngFor="let driver of drivers"
+    (click)="onSelect(driver)"
+    [class.selected]="driver === selectedDriver">
+    <span class="badge">{{driver.id}}</span> {{driver.name}}
+  </li>
+</ul>
+
+<app-driver-detail [driver]="selectedDriver"></app-driver-detail>
