@@ -3,13 +3,13 @@ import { Driver } from '../driver';
 import { DriverService } from '../driver.service';
 
 @Component({
-  selector: 'app-drivers',
-  templateUrl: './drivers.component.html',
-  styleUrls: ['./drivers.component.scss']
+  selector: 'app-dashboard',
+  templateUrl: './dashboard.component.html',
+  styleUrls: ['./dashboard.component.scss']
 })
-export class DriversComponent implements OnInit {
-
-  drivers: Driver[];  
+export class DashboardComponent implements OnInit {
+  
+  drivers: Driver[];
 
   constructor(private driverService: DriverService) { }
 
@@ -19,7 +19,7 @@ export class DriversComponent implements OnInit {
 
   getDrivers(): void {
     this.driverService.getDriversList()
-      .subscribe(drivers => this.drivers = drivers);
+      .subscribe(drivers => this.drivers = drivers.slice(1, 5));
   }
 
 }

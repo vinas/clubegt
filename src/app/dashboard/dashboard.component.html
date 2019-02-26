@@ -1,0 +1,9 @@
+<h3>Top Drivers</h3>
+<div class="grid grid-pad">
+  <a *ngFor="let driver of drivers" class="col-1-4"
+    routerLink="/detail/{{driver.id}}">
+    <div class="module driver">
+      <h4>{{driver.name}}</h4>
+    </div>
+  </a>
+</div>
